@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+html,body {
+    background-color: blanchedalmond;
+}
+
+h1, h2, h3 {
+    font-family: Raleway, sans-serif;
+    color: rgb(137, 182, 222);
+}
+
+p {
+    font-family: Georgia, serif;
+    color: rgb(48, 40, 40);
+}
+
+#sales-data {
+    font-family: Arial, sans-serif;
+    color: rgb(71, 168, 168);
+}
+
+#box-container {
+    display: flex;
+    margin-inline: 140px;
+    justify-content: space-between;
+}
+
+.box {
+    height: 120px;
+    border: solid 5px black;
+    width: 150px;
+    
+}
