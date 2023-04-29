@@ -6,7 +6,7 @@ html,body {
 
 h1, h2, h3 {
     font-family: Raleway, sans-serif;
-    color: rgb(137, 182, 222);
+    color: rgb(54, 112, 162);
 }
 
 p {
@@ -26,8 +26,8 @@ p {
 }
 
 .box {
-    height: 120px;
+    height: 160px;
     border: solid 5px black;
-    width: 150px;
+    width: 350px;
     
 }
