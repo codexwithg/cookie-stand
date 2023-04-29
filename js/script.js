@@ -51,14 +51,18 @@ for (let store of stores) {
 
     let ulElem = document.createElement('ul');
     salesSection.appendChild(ulElem)
-
+    let total = 0;
     for (let index in store['amountPurchasedPerHour']) {
         let liElem = document.createElement('li');
-        liElem.textContent = store['amountPurchasedPerHour'][index]
-        ulElem.appendChild(liElem)
+        liElem.textContent = `${hours[index]}: ${store['amountPurchasedPerHour'][index]}`;
+        ulElem.appendChild(liElem);
 
+        total += store['amountPurchasedPerHour'][index]
     }
 
+    let totalLiElem = document.createElement('li')
+    totalLiElem.textContent = `Total: ${total}`
+    ulElem.appendChild(totalLiElem)
 
 
 }
