@@ -42,25 +42,24 @@ for (let store of stores) {
 }
 console.log(stores);
 
-let seattleDivElement = document.getElementById("seattle")
-let seattleUlElement = document.createElement("ul")
-seattleDivElement.appendChild(seattleUlElement)
 
-let tokyoDivElement = document.getElementById("tokyo")
-let tokyoUlElement = document.createElement("ul")
-tokyoDivElement.appendChild(tokyoUlElement)
+for (let store of stores) {
+    let salesSection = document.getElementById('sales')
+    let headingElem = document.createElement('h2');
+    headingElem.textContent = store["store"]
+    salesSection.appendChild(headingElem);
 
-let dubaiDivElement = document.getElementById("dubai")
-let dubaiUlElement = document.createElement("ul")
-dubaiDivElement.appendChild(dubaiUlElement)
+    let ulElem = document.createElement('ul');
+    salesSection.appendChild(ulElem)
+
+    for (let index in store['amountPurchasedPerHour']) {
+        let liElem = document.createElement('li');
+        liElem.textContent = store['amountPurchasedPerHour'][index]
+        ulElem.appendChild(liElem)
+
+    }
 
 
-let parisDivElement = document.getElementById("paris")
-let parisUlElement = document.createElement("ul")
-parisDivElement.appendChild(parisUlElement)
 
-let limaDivElement = document.getElementById("lima")
-let limaUlElement = document.createElement("ul")
-limaDivElement.appendChild(limaUlElement)
-
+}
 
