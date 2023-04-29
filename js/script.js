@@ -8,6 +8,9 @@ let stores = [
     { store: "Lima", minCust: 2, maxCust: 16, avgCookiesPerSale: 4.6 },
 ];
 
+let hours = ["11am", "12pm", "1pm", "2pm"];
+
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 function getRandomInt(min, max) {
@@ -17,9 +20,15 @@ function getRandomInt(min, max) {
 }
   
 // Loop through the stores and add a randCustPerHour key/value to each other
-for (let store of stores); {
-    store['randCustPerHour'] = getRandomInt(store['minCust'], store['maxCust']);
+for (let store of stores) {
+    store['avgCookiesPurchased'] = getRandomInt(store['minCust'], store['maxCust']);
     console.log(store)
 }
 
-  
+for(let store of stores) {
+    for (let hour of hours) 
+        store["amountPurchasedPerHour"] = []
+    store["amountPurchasedPerHour"].push(
+        store["averageCookiesPurchased"] * store["avgCookiesPerSale"]):
+}
+console.log(store);
