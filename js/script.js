@@ -20,24 +20,24 @@ function getRandomInt(min, max) {
 }
   
 // Loop through the stores and add a randCustPerHour key/value to each other
-for (let store of stores) {
-    store['avgCookiesPurchased'] = getRandomInt(
-        store['minCust'],
-        store['maxCust']
-    );
+   
     // console.log(store);
 
 
-    for (let store of stores) {
-        store["amountPurchasedPerHour"] = [];
+for (let store of stores) {
+        
+    store["amountPurchasedPerHour"] = [];
 
-        for (let hour of hours)
+    for (let hour of hours) {
+        let randomInteger = getRandomInt(
+            store['minCust'],
+            store['maxCust']
+        );
+        // console.log(store["amountPurchasedPerHour"])
         
-            // console.log(store["amountPurchasedPerHour"])
-        
-            store["amountPurchasedPerHour"].push(
-             Math.floor (store["avgCookiesPurchased"] * store["avgCookiesPerSale"])
-            );
+        store["amountPurchasedPerHour"].push(
+            Math.floor(randomInteger * store["avgCookiesPerSale"])
+        );
     }
 }
 console.log(stores);
@@ -54,14 +54,14 @@ for (let store of stores) {
     let total = 0;
     for (let index in store['amountPurchasedPerHour']) {
         let liElem = document.createElement('li');
-        liElem.textContent = `${hours[index]}: ${store['amountPurchasedPerHour'][index]}`;
+        liElem.textContent = `${hours[index]}: ${store['amountPurchasedPerHour'][index]} Donuts`;
         ulElem.appendChild(liElem);
 
         total += store['amountPurchasedPerHour'][index]
     }
 
     let totalLiElem = document.createElement('li')
-    totalLiElem.textContent = `Total: ${total}`
+    totalLiElem.textContent = `Total: ${total} Donuts`
     ulElem.appendChild(totalLiElem)
 
 
