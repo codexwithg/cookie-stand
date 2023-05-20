@@ -58,6 +58,7 @@ for (let store of stores) {
   ulElem.appendChild(totalLiElem);
 }
 
+// (For Lab 07)
 function Donutstand(name, minCust, maxCust, avgCookiesPerSale) {
   this.name = name;
   this.minCust = minCust;
@@ -71,23 +72,14 @@ Donutstand.prototype.DonutstandReport = function () {
   console.log(`${this.name} sold ${this.avgCookiesPerSale} `);
 };
 
-// ("Lab Class 06-2 Test");
-// class Donutstand {
-// constructor(name, minCust, maxCust, avgCookiesPerSale) {
-//     this.name = name;
-//     this.minCust = minCust;
-//     this.maxCust = maxCust;
-//     this.avgCookiesPerSale = avgCookiesPerSale;
-//     this.hourlyDonuts = [];
-//     this.dailyDonuts = 0;
-//   }
-//   getRandomCust() {
-//     return (
-//       Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) +
-//       this.minCust
-//     );
-//   }
-// }
+
+  getRandomCust() {
+    return (
+      Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) +
+      this.minCust
+    );
+  }
+
 
 // for (let i = 0; i < stores.length; i++) {
 //   for (let j = 0; j < hours.length; j++) {
