@@ -58,33 +58,84 @@ for (let store of stores) {
   ulElem.appendChild(totalLiElem);
 }
 
+// (For Lab 07)
+// function Donutstand(name, minCust, maxCust, avgCookiesPerSale) {
+//   this.name = name;
+//   this.minCust = minCust;
+//   this.maxCust = maxCust;
+//   this.avgCookiesPerSale = avgCookiesPerSale;
+//   this.hourlyDonuts = [];
+//   this.dailyDonuts = 0;
+// }
 
+// getRandomCust(); {
+//   return
+//   Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) +
+//     this.minCust;
+// }
 
+// simulateHourlyCookies(); {
+//   const hourlyDonuts = [];
 
-
-
-//"Lab Class 06-2 Test"
-// class Donutstand {
-//   constructor(name, minCust, maxCust, avgCookiesPerSale) {
-//     this.name = name;
-//     this.minCust = minCust;
-//     this.maxCust = maxCust;
-//     this.avgCookiesPerSale = avgCookiesPerSale;
-//     this.hourlyDonuts = [];
-//     this.dailyDonuts = 0;
+//   for (let hour = 6; hour <= 19; hour++) {
+//     const cust = this.getRandomCust();
+//     const cookies = Math.round(cust * this.avgCookiesPerSale);
+//     hourlyDonuts.push(cookies);
 //   }
-//   getRandomCust() {
-//     return (
-//       Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) +
-//       this.minCust
-//     );
+
+//   this.hourlyDonuts = hourlyDonuts;
+// }
+
+// calculateDailyDonuts(); {
+//   const dailyDonuts = this.hourlyDonuts.reduce((sum, cookies) => sum + cookies);
+//   this.dailyDonuts = dailyDonuts;
+// }
+
+// render(table); {
+//   const row = document.createElement('tr');
+//   const nameCell = document.createElement('td');
+//   nameCell.textContent = this.name;
+//   row.appendChild(namecell);
+
+//   for (const cookies of this.hourlyDonuts) {
+//     const cell = document.createElement('td');
+//     cell.textContent = cookies;
+//     row.appendChild(cell);
+
+//     const totalCell = document.createElement('td');
+//     totalCell.textContent = this.dailyDonuts;
+//     row.appendChild(totalCell);
+
+//     table.appendChild(row);
 //   }
 // }
 
-// for (let i = 0; i < stores.length; i++){
-//     for (let j = 0; j < hours.length; j++){
-//         let randomNum = getRandomInt(stores[i].minCust, stores[i].maxCust);
-//         stores[i].salesPerHour.push(randomNum)
-//     }
+// const Donutstand = [
+//   new Donutstand('Seattle', 23, 65, 6.3),
+//   new Donutstand('Tokyo', 3, 24, 1.2),
+//   new Donutstand('Dubai', 11, 38, 3.7),
+//   new Donutstand('Seattle', 20, 38, 2.3),
+//   new Donutstand('Seattle', 20, 38, 2.3),
+//   new Donutstand('Seattle', 23, 65, 4.6),
+// ];
+
+// for (const Donutstand of Donutstands){
+//   Donutstand.simulateHourlyCookies();
+// Donutstand.calculateDailyDonuts();
+
+// const table = document.createElement('table');
+
+// const headerRow = document.createElement('tr');
+// const emptyHeader = document.createElement('th');
+// headerRow.appendChild(header);
 // }
-// console.log(stores)
+
+// const totalHeader = document.createElement('th');
+// totalHeader.textContent = 'Daily Location Total';
+// headerRow.appendChild(totalHeader);
+
+// table.appendChild(headerRow);
+
+// for (const Donutstand of Donutstands) {
+//   Donutstand.render(table);
+// }

@@ -5,16 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sales Page</title>
-  </head>
-  <body>
-    <header>
+ 
       <h1>Sales Data</h1>
+      <div id="table-container"></div>
     </header>
     <main>
-      <section id="sales">
-      </section>
+      <section id="sales"></section>
     </main>
-    <footer></footer>
+      <table
+        border="2"
+        bgcolor="#efefef"
+        width="600"
+        cellpadding="6"
+        cellspacing="6"
+      >
+        <tr>
+          <th></th>
+          <th width="90">11am</th>
+          <th width="90">12pm</th>
+          <th width="90">1pm</th>
+          <th width="90">2pm</th>
+          <th width="90">Daily Location Total</th>
+        </tr>
+        <tr>
+          <th>Seattle:</th>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+        </tr>
+        <tr>
+          <th>Tokyo:</th>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+        </tr>
+        <tr>
+          <th>Dubai:</th>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+        </tr>
+        <tr>
+          <th>Paris:</th>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+        </tr>
+        <tr>
+          <th>Lima:</th>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+          <td colspan="1"></td>
+        </tr>
+      </table>
     <script src="js/script.js"></script>
+    <script>
+      const tableContainer = document.getElementById("table-container");
+      tableContainer.appendChild(table);
+    </script>
   </body>
 </html>
