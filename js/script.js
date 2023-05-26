@@ -13,8 +13,6 @@ let stores = [
   new Donutstand("Lima", 2, 16, 4.6),
 ];
 
-
-
 let hours = ["11am", "12pm", "1pm", "2pm"];
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -81,12 +79,12 @@ let headingElement = document.getElementById("heading-row");
 for (let h = 0; h < hours.length; h++) {
   let hourElement = document.createElement("th");
   hourElement.textContent = hours[h];
-  headingRow.appendChild(hourElement)
-  console.log(stores)
+  headingRow.appendChild(hourElement);
+  console.log(stores);
 }
-  
+
 for (let i = 0; i < stores.length; i++) {
-    let trElement = document.createElement('tr');
-    let td = document.createElement('td');
-    td.textContent = stores[i]
+  let trElement = document.createElement("tr");
+  let td = document.createElement("td");
+  td.textContent = stores[i];
 }
