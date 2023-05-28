@@ -1,19 +1,12 @@
-"use strict";
+'use strict';
 
-let stores = [
-  // { store: "Seattle", minCust: 23, maxCust: 65, avgCookiesPerSale: 6.3 },
-  // { store: "Tokyo", minCust: 3, maxCust: 24, avgCookiesPerSale: 1.2 },
-  // { store: "Dubai", minCust: 11, maxCust: 38, avgCookiesPerSale: 3.7 },
-  // { store: "Paris", minCust: 20, maxCust: 38, avgCookiesPerSale: 2.3 },
-  // { store: "Lima", minCust: 2, maxCust: 16, avgCookiesPerSale: 4.6 },
-  new Donutstand("Seattle", 23, 65, 6.3),
-  new Donutstand("Tokyo", 3, 24, 1.2),
-  new Donutstand("Dubai", 11, 38, 3.7),
-  new Donutstand("Paris", 20, 38, 2.3),
-  new Donutstand("Lima", 2, 16, 4.6),
-];
+//STEP 1: grab form element from DOM
 
-let hours = ["11am", "12pm", "1pm", "2pm"];
+console.log("hello world")
+
+// STEP 2: define handleSubmit function
+
+// STEP 3: add event listener for the event
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
@@ -24,6 +17,15 @@ let hours = ["11am", "12pm", "1pm", "2pm"];
 // }
 
 // Loop through the stores and add a randCustPerHour key/value to each other
+let stores = [
+  new Donutstand("Seattle", 23, 65, 6.3),
+  new Donutstand("Tokyo", 3, 24, 1.2),
+  new Donutstand("Dubai", 11, 38, 3.7),
+  new Donutstand("Paris", 20, 38, 2.3),
+  new Donutstand("Lima", 2, 16, 4.6),
+];
+
+let hours = ["11am", "12pm", "1pm", "2pm"];
 
 // console.log(store);
 
@@ -64,27 +66,87 @@ let hours = ["11am", "12pm", "1pm", "2pm"];
 // }
 
 // (For Lab 07)
+let tableElem = document.getElementById("sales-table");
+let headingElem = document.getElementById("heading-row");
+
 function Donutstand(name, minCust, maxCust, avgCookiesPerSale) {
+  //Input data:
   this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookiesPerSale = avgCookiesPerSale;
+  //Calculated data:
   this.hourlyDonuts = [];
-  this.dailyDonuts = 0;
 }
 
-let tableElement = document.getElementById("sales-table");
-let headingElement = document.getElementById("heading-row");
-
-for (let h = 0; h < hours.length; h++) {
-  let hourElement = document.createElement("th");
-  hourElement.textContent = hours[h];
-  headingRow.appendChild(hourElement);
-  console.log(stores);
+//This will provide the names of the locations.
+Donutstand.prototype.render = function () {
+  let salesElem = document.getElementById("sales-table");
+  let cityElement = document.createElement("tr");
+  cityElement.textContent = this.name;
+  salesElem.appendChild(cityElement);
+  console.log(cityElement);
 }
 
-for (let i = 0; i < stores.length; i++) {
-  let trElement = document.createElement("tr");
-  let td = document.createElement("td");
-  td.textContent = stores[i];
+//This will calculate the random data for the store sales per hour.
+Donutstand.prototype.calculate = function () {
+  let minCust = this.minCust;
+  let maxCust = this.maxCust;
+  let avg = this.avgCookiesPerSale;
+
+  for (let i = 0; i < this.length; i++) {
+    let randomInteger = getRandomInt(minCust, maxCust);
+    let donutSalesThisHour = Math.floor(randomInteger * avg);
+    this.hourlyDonuts.push(donutSalesThisHour);
+  }
+}
+
+Donutstand.prototype.render = function () {
+  let root = document.getElementById("sales-data");
+  let storeDataElem = document.createElement("tr");
+
+  let storeNameElem = document.createElement("td");
+  storeNameElem.textContent = this.name;
+  storeDataElem.appendChild(storeNameElem);
+
+  for (let sales of this.hourlyDonuts) {
+    let salesElem = document.createElement("td");
+    salesElem.textContent = `${sales} for this hour`;
+    storeDataElem.appendChild(salesElem);
+  }
+}
+
+// 1. create objects
+let seattle = new Donutstand("Seattle", 23, 65, 6.3);
+let tokyo = new Donutstand("Tokyo", 3, 24, 1.2);
+let dubai = new Donutstand("Dubai", 11, 38, 3.7);
+let paris = new Donutstand("Paris", 20, 38, 2.3);
+let lima = new Donutstand("Lima", 2, 16, 4.6);
+
+// 2. create array
+let locations = [seattle, tokyo, dubai, paris, lima];
+
+// 3. loop through array
+for (let store of locations) {
+  store.calculate(); 
+  store.render();
+}
+
+// seattle.calculate();
+//calculateHours(seattle);
+seattle.render();
+// render(Seattle);
+
+console.log(seattle);
+
+// for (let i = 0; i < stores.length; i++) {
+//   let trElement = document.createElement("td");
+//   let td = document.createElement("td");
+//   td.textContent = stores[i];
+//   salesTable.appendChild(storeElem);
+// }
+
+
+for (let store of stores) {
+  store.render();
 }
