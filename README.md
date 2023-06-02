@@ -6,7 +6,8 @@ Gerard Johnson
 
 ## Lighthouse
 
-<img width="639" alt="Screen Shot 2023-04-29 at 5 42 20 PM" src="https://user-images.githubusercontent.com/128838992/235327360-7ec0aca5-c1dc-4185-8c93-1557d1c43ac7.png">
+![Screen Shot 2023-06-01 at 10 48 43 PM](https://github.com/codexwithg/cookie-stand/assets/128838992/4b9020f2-d015-4f08-820a-45edf561d96b)
+
 
 
 ## Sources
